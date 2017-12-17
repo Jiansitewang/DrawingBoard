@@ -12,6 +12,9 @@ body{
 }
 #xxx{
     display:block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }
 .actions{
     position:fixed;
