@@ -3,16 +3,16 @@ var context = yyy.getContext('2d');
 var lineWidth = 5
 
 autoSetCanvasSize(yyy)
-
 listenToUser(yyy)
 
-
 var eraserEnabled = false
+//画笔
 pen.onclick = function () {
   eraserEnabled = false
   pen.classList.add('active')
   eraser.classList.remove('active')
 }
+//橡皮擦
 eraser.onclick = function () {
   eraserEnabled = true
   eraser.classList.add('active')
@@ -21,6 +21,7 @@ eraser.onclick = function () {
 clear.onclick = function () {
   context.clearRect(0, 0, yyy.width, yyy.height);
 }
+//下载按钮
 download.onclick = function () {
   var url = yyy.toDataURL("image/png")
   var a = document.createElement('a')
@@ -30,6 +31,7 @@ download.onclick = function () {
   a.target = '_blank'
   a.click()
 }
+//红色
 red.onclick = function () {
   context.fillStyle = 'red'
   context.strokeStyle = 'red'
@@ -37,7 +39,7 @@ red.onclick = function () {
   green.classList.remove('active')
   blue.classList.remove('active')
 }
-
+//绿色
 green.onclick = function () {
   context.fillStyle = 'green'
   context.strokeStyle = 'green'
@@ -45,7 +47,7 @@ green.onclick = function () {
   red.classList.remove('active')
   blue.classList.remove('active')
 }
-
+//蓝色
 blue.onclick = function () {
   context.fillStyle = 'blue'
   context.strokeStyle = 'blue'
@@ -53,9 +55,11 @@ blue.onclick = function () {
   green.classList.remove('active')
   red.classList.remove('active')
 }
+//细画笔
 thin.onclick = function () {
   lineWidth = 5
 }
+//粗画笔
 thick.onclick = function () {
   lineWidth = 10
 }
@@ -64,15 +68,12 @@ thick.onclick = function () {
 
 function autoSetCanvasSize(canvas) {
   setCanvasSize()
-
   window.onresize = function () {
     setCanvasSize()
   }
-
   function setCanvasSize() {
     var pageWidth = document.documentElement.clientWidth
     var pageHeight = document.documentElement.clientHeight
-
     canvas.width = pageWidth
     canvas.height = pageHeight
   }
@@ -118,6 +119,7 @@ function listenToUser(canvas) {
     canvas.ontouchmove = function (yyy) {
       var x = yyy.touches[0].clientX
       var y = yyy.touches[0].clientY
+      console.log(x)
       if (!using) {
         return
       }
