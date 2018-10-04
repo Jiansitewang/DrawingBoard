@@ -19,7 +19,7 @@ eraser.onclick = function () {
   pen.classList.remove('active')
 }
 clear.onclick = function () {
-  context.clearRect(0, 0, yyy.width, yyy.height);
+  context.clearRect(0, 0, 50,50);
 }
 //下载按钮
 download.onclick = function () {
@@ -108,7 +108,7 @@ function listenToUser(canvas) {
       var y = yyy.touches[0].clientY
       using = true
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 50, 50)
       } else {
         lastPoint = {
           "x": x,
@@ -124,7 +124,7 @@ function listenToUser(canvas) {
         return
       }
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 50, 50)
       } else {
         var newPoint = {
           "x": x,
@@ -144,7 +144,7 @@ function listenToUser(canvas) {
       var y = yyy.clientY
       using = true
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 50, 50)
       } else {
         lastPoint = {
           "x": x,
@@ -160,7 +160,7 @@ function listenToUser(canvas) {
         return
       }
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 50, 50)
       } else {
         var newPoint = {
           "x": x,
